@@ -1,0 +1,76 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form id="form">
+            Pid: <input type="text" id="pid">
+            Name: <input type="text" id="name">
+            Price: <input type="text" id="price">
+            Brand: <input type="text" id="brand">
+            <button onclick="addpro()">Add product</button>
+            
+        </form>
+        <table border="1" width="100%">
+            <thead>
+                <th>Pid</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Brand</th>
+                <th colspan="2">Operations</th>
+            </thead>
+            <tbody id="tdata">
+
+            </tbody>
+        </table>
+        <script>
+            var products=[];
+            function addpro(){
+                event.preventDefault();
+                var pid=getpro("pid");
+                var name=getpro("name");
+                var price=getpro("price");
+                var brand=getpro("brand");
+                var product={
+                    pid:pid,
+                    name:name,
+                    price:price,
+                    brand:brand
+                }
+                products.push(product);
+                console.log(products);
+                showpro(products);
+
+            }
+            function getpro(some1){
+                return document.getElementById(some1).value;
+            }
+            
+            
+            function showpro(some2){
+                var list="";
+               
+                products.forEach(function(v){
+                    list+="<tr>"+"<td>"+v.pid+"</td>"+"<td>"+v.name+"</td>"+"<td>"+v.price+"</td>"+"<td>"+v.brand+"</td>"+"<td><button>Edit</button></td>"+"<td><button onclick='delpro()'>Delete</button></td>"+"</tr>";
+                })
+                document.getElementById("tdata").innerHTML=list;
+                document.getElementById("form").reset();
+                
+            }
+            function delpro(){
+                products.forEach(function(v,i){
+                   
+                
+                  products.splice(i,1)
+                   
+
+                })
+
+                showpro(products);
+                
+               
+            }
+        </script>
+
+    </body>
+</html>
