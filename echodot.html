@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <style>
+            div{
+                border: 1px solid black;
+                 margin-right: 1180px;
+                 margin-left: 10px;;
+              
+            }
+            #id{
+                border:1px solid black;
+                width:300px;
+                height: 350px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                
+                
+            }
+            h4{
+                padding-top: 10px;
+            }
+            #id1{
+                display: inline;
+            }
+            img{
+                cursor: zoom-in;
+            }
+            h3, .id{
+                margin: 0;
+                padding: 0;
+            } 
+            h3{
+                margin-top: 10px;
+            }
+            
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+    <body>
+        <div>
+        <div id="id">
+            <img width="300px" height="120px" src="https://m.media-amazon.com/images/I/61T++pHMh3S._AC_SL1000_.jpg">
+             <h3>Echo Dot Smart Speaker</h3>
+            <h4 class="id" style="color:grey;">M.R.P.:<span style="color:orange">&#8377; 3,249.00</span></h4>
+            <h4  class="id" style="color:blue;">Brand: Amazon</h4><br><br>
+            <i  onclick="check()"  id="star"  class="fa fa-star" style="color:lightgray"></i> 
+            <i  onclick="check()"  id="star"  class="fa fa-star" style="color:lightgray"></i> &nbsp; &nbsp; &nbsp; &nbsp;  <h5 id="id1" style="color:lightblue;">292 ratings</h5><br><br>
+            <i class="fa fa-heart"></i> &nbsp; &nbsp; <i class="fa fa-share-alt"></i>
+
+            
+        </div>
+        </div>
+        <script>
+            function check(){
+                if(document.getElementById("star").style.color=="lightgray"){
+                    document.getElementById("star").style.color="orange";
+                }
+                else{
+                    document.getElementById("star").style.color="lightgray";
+                }
+                console.log("hello");
+
+            }
+        </script>
+    </body>
+</html>
